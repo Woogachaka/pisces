@@ -145,6 +145,19 @@ function remove_from_card_stack(card_inst) {
 	}
 }
 
+function searchStack(search_query,stack_inst)
+{
+	var _cardFilter = method(obj_card, function( search_query) {
+			
+			return _contains(obj_card.name,search_query);
+			
+			});
+	
+	var outputCollection = _filter(stack_inst.stack_list,_cardFilter);
+	
+	return outputCollection;
+}
+
 function clear_all_menus()
 {
 	with (obj_menu)
